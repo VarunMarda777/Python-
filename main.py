@@ -1,7 +1,11 @@
 # Simulated Website Blocker (GitHub-safe)
+import json
 
 hosts_path = "data/hosts_simulated.txt"
 redirect_ip = "127.0.0.1"
+def load_config():
+    with open("config/settings.json", "r") as file:
+        return json.load(file)
 
 def block_websites(websites):
     with open(hosts_path, "r+") as file:
@@ -22,7 +26,9 @@ def unblock_websites(websites):
         file.truncate()
         
 if __name__ == "__main__":
-    websites = ["facebook.com", "youtube.com"]
+   config = load_config()
+    websites = config["websites"]
+
     block_websites(websites)
     print("Websites blocked (simulation).")
 
