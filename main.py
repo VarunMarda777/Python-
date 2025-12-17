@@ -38,7 +38,7 @@ def unblock_websites(websites):
 
         
 if __name__ == "__main__":
-   config = load_config()
+    config = load_config()
     websites = config["websites"]
 
     block_websites(websites)
@@ -46,3 +46,4 @@ if __name__ == "__main__":
 
     # Uncomment below line to unblock
     # unblock_websites(websites)
+
