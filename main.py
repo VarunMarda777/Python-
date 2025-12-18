@@ -1,4 +1,4 @@
-import requests
+from urllib.request import urlopen
 
 # Public ad-block list (hosts format)
 BLOCK_LIST_URL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
@@ -7,8 +7,8 @@ blocked_domains = []
 
 print("Downloading ad block list...")
 
-response = requests.get(BLOCK_LIST_URL)
-lines = response.text.splitlines()
+with urlopen(BLOCK_LIST_URL) as response:
+    lines = response.read().decode("utf-8").splitlines()
 
 for line in lines:
     if line.startswith("0.0.0.0"):
@@ -17,9 +17,9 @@ for line in lines:
 
 print(f"Total domains blocked: {len(blocked_domains)}")
 
-# Save results
+# Save sample results
 with open("blocked_domains.txt", "w") as f:
-    for domain in blocked_domains[:100]:  # limit for simplicity
+    for domain in blocked_domains[:100]:
         f.write(domain + "\n")
 
 print("Sample blocked domains saved to blocked_domains.txt")
