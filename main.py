@@ -1,10 +1,25 @@
-print("Website Blocker Simulation – GitHub Run")
+import requests
 
-sites = ["facebook.com", "youtube.com", "gmail.com"]
+# Public ad-block list (hosts format)
+BLOCK_LIST_URL = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
 
-with open("data/hosts_simulated.txt", "w") as f:
-    for site in sites:
-        f.write(f"127.0.0.1 {site}\n")
-        print(f"Blocked: {site}")
+blocked_domains = []
 
-print("Simulation completed")
+print("Downloading ad block list...")
+
+response = requests.get(BLOCK_LIST_URL)
+lines = response.text.splitlines()
+
+for line in lines:
+    if line.startswith("0.0.0.0"):
+        domain = line.split()[-1]
+        blocked_domains.append(domain)
+
+print(f"Total domains blocked: {len(blocked_domains)}")
+
+# Save results
+with open("blocked_domains.txt", "w") as f:
+    for domain in blocked_domains[:100]:  # limit for simplicity
+        f.write(domain + "\n")
+
+print("Sample blocked domains saved to blocked_domains.txt")
