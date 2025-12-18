@@ -1,48 +1,19 @@
-import time
-from datetime import datetime as dt
-import os
+ # Website Blocker (GitHub Simulation)
 
-sites_to_block = [
-    "www.facebook.com", "facebook.com",
-    "www.youtube.com", "youtube.com",
-    "www.gmail.com", "gmail.com"
-]
+This project simulates a website blocker using Python.
 
-redirect = "127.0.0.1"
+## How it works
+- Runs automatically using GitHub Actions
+- No installation required
+- Works on any system with a GitHub account
+- Simulates blocking by writing to a file
 
-# OS-specific hosts path
-if os.name == 'posix':
-    hosts_path = "/etc/hosts"
-elif os.name == 'nt':
-    hosts_path = r"C:\Windows\System32\drivers\etc\hosts"
-else:
-    print("OS Unknown")
-    exit()
+## How to see output
+1. Go to the **Actions** tab
+2. Open the latest workflow run
+3. View the logs
 
-def block_websites(start_hour, end_hour):
-    while True:
-        try:
-            now = dt.now()
-            if dt(now.year, now.month, now.day, start_hour) < now < dt(now.year, now.month, now.day, end_hour):
-                print("Blocking sites...")
-                with open(hosts_path, "r+") as file:
-                    hosts = file.read()
-                    for site in sites_to_block:
-                        if site not in hosts:
-                            file.write(redirect + " " + site + "\n")
-            else:
-                print("Unblocking sites...")
-                with open(hosts_path, "r+") as file:
-                    lines = file.readlines()
-                    file.seek(0)
-                    for line in lines:
-                        if not any(site in line for site in sites_to_block):
-                            file.write(line)
-                    file.truncate()
-            time.sleep(60)  # check every 1 minute
-        except PermissionError:
-            print("Permission denied: Run as Admin/Root")
-            break
-
-if __name__ == "__main__":
-    block_websites(9, 21)
+## Files
+- `main.py` – main logic
+- `.github/workflows/run.yml` – GitHub runner
+- `data/hosts_simulated.txt` – simulated output
