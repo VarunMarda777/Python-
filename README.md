@@ -1,19 +1,61 @@
- # Ads Blocker (GitHub Simulation)
+# Ads Blocker (GitHub-Only Project)
 
-This project simulates a website blocker using Python.
+## 📌 What is this project?
+This is a **GitHub-based Ads Blocker simulation**.
 
-## How it works
-- Runs automatically using GitHub Actions
-- No installation required
-- Works on any system with a GitHub account
-- Simulates blocking by writing to a file
+It runs completely on **GitHub Actions** and:
+- Uses Python
+- Requires **NO installation**
+- Works on **any system** with a GitHub account
+- Shows results directly in GitHub
 
-## How to see output
-1. Go to the **Actions** tab
-2. Open the latest workflow run
-3. View the logs
+⚠️ This project does NOT block ads on your personal device or browser.
+It demonstrates how ad-blocking logic works using block lists and automation.
 
-## Files
-- `main.py` – main logic
-- `.github/workflows/run.yml` – GitHub runner
-- `data/hosts_simulated.txt` – simulated output
+---
+
+## 🚀 How does it run?
+- GitHub Actions automatically runs the Python script
+- The script processes ad-blocking data
+- Output is generated in GitHub Actions logs (and later as downloadable files)
+
+You only need:
+✔ A GitHub account  
+✔ This repository  
+
+---
+
+## ▶️ How to run the project
+1. Open the **Actions** tab in this repository
+2. Select the workflow
+3. Click **Run workflow**
+4. View results in the **workflow logs**
+
+No command prompt.  
+No Python installation.  
+No setup required.
+
+---
+
+## 📂 Output
+- Logs show blocked domains and summary
+- (Next improvements will add downloadable reports)
+
+---
+
+## 🎯 Why this project?
+- Learn how ad-blockers work
+- Learn GitHub Actions automation
+- Run Python projects without local installation
+- Beginner-friendly and GitHub-safe
+
+---
+
+## 🛠️ Technologies Used
+- Python
+- GitHub Actions
+
+---
+
+## 📌 Note
+This project is designed for **learning and demonstration purposes** using GitHub automation.
