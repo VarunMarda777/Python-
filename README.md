@@ -1,4 +1,4 @@
- # Website Blocker (GitHub Simulation)
+ # Ads Blocker (GitHub Simulation)
 
 This project simulates a website blocker using Python.
 
