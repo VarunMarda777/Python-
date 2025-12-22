@@ -5,6 +5,17 @@
 > **One‑line summary:** A GitHub‑only Python project that fetches a real ad‑block list, extracts blocked domains, and publishes results as downloadable artifacts — no local setup required.
 
 ---
+Block ads & distracting domains entirely in GitHub — no local setup needed.
+
+Runs automatically or manually via GitHub Actions
+
+Downloads 70k+ domains from public ad-block lists
+
+Outputs results as a downloadable artifact
+
+Clean, interview-ready Python + CI pipeline
+
+⚡ Quick start: Go to Actions → Run workflow → main → Run
 
 ## ⚡ TL;DR (Quick Readers)
 
