@@ -1,61 +1,152 @@
-# Ads Blocker (GitHub-Only Project)
+# Ads Blocker — GitHub‑Native Python Automation
 
-## 📌 What is this project?
-This is a **GitHub-based Ads Blocker simulation**.
+![GitHub Actions](https://github.com/VarunMarda777/Ads_Blocker/actions/workflows/run.yml/badge.svg)
 
-It runs completely on **GitHub Actions** and:
-- Uses Python
-- Requires **NO installation**
-- Works on **any system** with a GitHub account
-- Shows results directly in GitHub
-
-⚠️ This project does NOT block ads on your personal device or browser.
-It demonstrates how ad-blocking logic works using block lists and automation.
+> **One‑line summary:** A GitHub‑only Python project that fetches a real ad‑block list, extracts blocked domains, and publishes results as downloadable artifacts — no local setup required.
 
 ---
 
-## 🚀 How does it run?
-- GitHub Actions automatically runs the Python script
-- The script processes ad-blocking data
-- Output is generated in GitHub Actions logs (and later as downloadable files)
+## ⚡ TL;DR (Quick Readers)
 
-You only need:
-✔ A GitHub account  
-✔ This repository  
+* ▶ Runs **entirely in GitHub Actions**
+* ❌ No local Python / installs
+* 📦 Output downloadable as an **Artifact**
+* 🧱 Clean `src/` structure
+* 🌐 Uses real open‑source ad‑block data
 
 ---
 
-## ▶️ How to run the project
-1. Open the **Actions** tab in this repository
-2. Select the workflow
+## 🧠 How It Works (Architecture)
+
+```
+Trigger (push / manual)
+        ↓
+GitHub Actions Runner (Ubuntu)
+        ↓
+Setup Python (3.11)
+        ↓
+Execute src/main.py
+        ↓
+Download public hosts list
+        ↓
+Parse & extract domains
+        ↓
+Generate blocked_domains.txt
+        ↓
+Upload artifact (downloadable)
+```
+
+**Key point:** The entire execution lifecycle happens inside GitHub’s infrastructure.
+
+---
+
+## 📂 Project Structure
+
+```
+Ads_Blocker/
+├── .github/
+│   └── workflows/
+│       └── run.yml        # CI pipeline
+├── src/
+│   └── main.py            # Core logic
+├── blocked_domains.txt    # Generated during workflow
+└── README.md
+```
+
+---
+
+## 🛠 What the Project Does
+
+1. Downloads a **public ad‑block hosts list**
+2. Extracts domain names mapped to `0.0.0.0`
+3. Counts total blocked domains
+4. Saves a **sample of 100 domains**
+5. Uploads the output as a **GitHub Actions artifact**
+
+---
+
+## 🌐 Data Source
+
+* **StevenBlack Hosts List**
+* Widely used by Pi‑hole, firewalls, and ad‑blocking tools
+* Contains **70,000+ known ad, tracking, and malicious domains**
+
+---
+
+## ▶ Running the Project (GitHub‑Only)
+
+### Manual Run (Recommended)
+
+1. Go to **Actions**
+2. Select **Run Python Project**
 3. Click **Run workflow**
-4. View results in the **workflow logs**
+4. Choose branch: `main`
+5. Click **Run**
 
-No command prompt.  
-No Python installation.  
-No setup required.
+### Automatic Run
 
----
-
-## 📂 Output
-- Logs show blocked domains and summary
-- (Next improvements will add downloadable reports)
+* Any push to `main` triggers the workflow
 
 ---
 
-## 🎯 Why this project?
-- Learn how ad-blockers work
-- Learn GitHub Actions automation
-- Run Python projects without local installation
-- Beginner-friendly and GitHub-safe
+## 📥 Output
+
+After completion:
+
+1. Open the workflow run
+2. Scroll to **Artifacts**
+3. Download `blocked-domains-output`
+
+### Sample Output
+
+```
+ads.facebook.com
+doubleclick.net
+tracking.google.com
+```
 
 ---
 
-## 🛠️ Technologies Used
-- Python
-- GitHub Actions
+## 💼 Resume / LinkedIn Version
+
+**Ads Blocker Automation (GitHub Actions)**
+
+* Built a GitHub‑native Python automation pipeline using GitHub Actions
+* Processed real‑world ad‑blocking datasets (70k+ domains)
+* Implemented CI execution, artifact publishing, and manual triggers
+* Designed with clean project structure and production‑style logging
 
 ---
 
-## 📌 Note
-This project is designed for **learning and demonstration purposes** using GitHub automation.
+## 🧪 Technical / Interview Talking Points
+
+* Why GitHub Actions over local execution
+* Artifact handling in CI/CD pipelines
+* Safe network calls inside CI runners
+* Separation of logic (`src/`) and orchestration (workflow)
+* Deterministic builds via pinned Python version
+
+---
+
+## 🔒 Requirements
+
+* A GitHub account
+* Nothing else
+
+---
+
+## 🚀 Possible Enhancements
+
+* CSV export option
+* Workflow inputs (domain count)
+* Scheduled execution (cron)
+* Test & lint stages
+
+---
+
+## 👤 Author
+
+**Varun Marda**
+Technology Consultant | Python | GitHub Actions
+
+⭐ Star the repository if you find it useful
