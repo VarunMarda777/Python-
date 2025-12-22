@@ -23,13 +23,12 @@ jobs:
       - name: Show project structure
         run: ls -R
 
-      - name: Check if main.py exists
+      - name: Check if src/main.py exists
         run: |
-          if [ ! -f "main.py" ]; then
-            echo "❌ main.py not found in root directory"
+          if [ ! -f "src/main.py" ]; then
+            echo "❌ src/main.py not found"
             exit 1
           fi
 
       - name: Run main script
-        run: python main.py
-        
+        run: python src/main.py
