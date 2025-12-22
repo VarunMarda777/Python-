@@ -1,72 +1,70 @@
-# Ads Blocker — GitHub‑Native Python Automation
+# Ads_Blocker — GitHub-Native Python Automation
 
-![GitHub Actions](https://github.com/VarunMarda777/Ads_Blocker/actions/workflows/run.yml/badge.svg)
+![GitHub Actions](https://github.com/VarunMarda777/Ads_Blocker/actions/workflows/run.yml/badge.svg)  
 
-> **One‑line summary:** A GitHub‑only Python project that fetches a real ad‑block list, extracts blocked domains, and publishes results as downloadable artifacts — no local setup required.
+**Block ads & distracting domains entirely in GitHub — no local setup needed.**  
+- Runs **automatically** or manually via GitHub Actions  
+- Downloads **70k+ domains** from public ad-block lists  
+- Outputs results as a **downloadable artifact**  
+- Clean, interview-ready Python + CI pipeline  
+
+**⚡ Quick start:** Go to **Actions → Run workflow → main → Run**
 
 ---
-Block ads & distracting domains entirely in GitHub — no local setup needed.
 
-Runs automatically or manually via GitHub Actions
+## One-Line Summary
 
-Downloads 70k+ domains from public ad-block lists
+A GitHub-only Python project that fetches a real ad-block list, extracts blocked domains, and publishes results as downloadable artifacts — no local setup required.
 
-Outputs results as a downloadable artifact
+---
 
-Clean, interview-ready Python + CI pipeline
-
-⚡ Quick start: Go to Actions → Run workflow → main → Run
-
-## ⚡ TL;DR (Quick Readers)
+## TL;DR (Quick Readers)
 
 * ▶ Runs **entirely in GitHub Actions**
 * ❌ No local Python / installs
 * 📦 Output downloadable as an **Artifact**
 * 🧱 Clean `src/` structure
-* 🌐 Uses real open‑source ad‑block data
+* 🌐 Uses real open-source ad-block data
 
 ---
 
-## 🧠 How It Works (Architecture)
+## How It Works (Architecture)
 
-```
 Trigger (push / manual)
-        ↓
+↓
 GitHub Actions Runner (Ubuntu)
-        ↓
+↓
 Setup Python (3.11)
-        ↓
+↓
 Execute src/main.py
-        ↓
+↓
 Download public hosts list
-        ↓
+↓
 Parse & extract domains
-        ↓
+↓
 Generate blocked_domains.txt
-        ↓
+↓
 Upload artifact (downloadable)
-```
 
 **Key point:** The entire execution lifecycle happens inside GitHub’s infrastructure.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
-```
 Ads_Blocker/
 ├── .github/
-│   └── workflows/
-│       └── run.yml        # CI pipeline
+│ └── workflows/
+│ └── run.yml # CI pipeline
 ├── src/
-│   └── main.py            # Core logic
-├── blocked_domains.txt    # Generated during workflow
+│ └── main.py # Core logic
+├── blocked_domains.txt # Generated during workflow
 └── README.md
-```
 
 ---
 
-## 🛠 What the Project Does
+## What the Project Does
+
 Boost productivity by restricting access to time-wasting sites—runs entirely within GitHub.
 
 1. Downloads a **public ad‑block hosts list**
@@ -77,15 +75,15 @@ Boost productivity by restricting access to time-wasting sites—runs entirely w
 
 ---
 
-## 🌐 Data Source
+## Data Source
 
 * **StevenBlack Hosts List**
-* Widely used by Pi‑hole, firewalls, and ad‑blocking tools
+* Widely used by Pi‑hole, firewalls, and ad-blocking tools
 * Contains **70,000+ known ad, tracking, and malicious domains**
 
 ---
 
-## ▶ Running the Project (GitHub‑Only)
+## Running the Project (GitHub-Only)
 
 ### Manual Run (Recommended)
 
@@ -101,7 +99,7 @@ Boost productivity by restricting access to time-wasting sites—runs entirely w
 
 ---
 
-## 📥 Output
+## Output
 
 After completion:
 
@@ -111,26 +109,24 @@ After completion:
 
 ### Sample Output
 
-```
 ads.facebook.com
 doubleclick.net
 tracking.google.com
-```
 
 ---
 
-## 💼 Resume / LinkedIn Version
+## Resume / LinkedIn Version
 
 **Ads Blocker Automation (GitHub Actions)**
 
 * Built a GitHub‑native Python automation pipeline using GitHub Actions
-* Processed real‑world ad‑blocking datasets (70k+ domains)
+* Processed real‑world ad-blocking datasets (70k+ domains)
 * Implemented CI execution, artifact publishing, and manual triggers
-* Designed with clean project structure and production‑style logging
+* Designed with clean project structure and production-style logging
 
 ---
 
-## 🧪 Technical / Interview Talking Points
+## Technical / Interview Talking Points
 
 * Why GitHub Actions over local execution
 * Artifact handling in CI/CD pipelines
@@ -140,14 +136,14 @@ tracking.google.com
 
 ---
 
-## 🔒 Requirements
+## Requirements
 
-* A GitHub account
+* A GitHub account  
 * Nothing else
 
 ---
 
-## 🚀 Possible Enhancements
+## Possible Enhancements
 
 * CSV export option
 * Workflow inputs (domain count)
@@ -156,9 +152,9 @@ tracking.google.com
 
 ---
 
-## 👤 Author
+## Author
 
-**Varun Marda**
+**Varun Marda**  
 Technology Consultant | Python | GitHub Actions
 
 ⭐ Star the repository if you find it useful
