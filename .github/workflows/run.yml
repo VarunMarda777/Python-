@@ -20,5 +20,15 @@ jobs:
       - name: Show Python version
         run: python --version
 
+      - name: Show project structure
+        run: ls -R
+
+      - name: Check if main.py exists
+        run: |
+          if [ ! -f "main.py" ]; then
+            echo "❌ main.py not found in root directory"
+            exit 1
+          fi
+
       - name: Run main script
         run: python main.py
