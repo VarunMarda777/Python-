@@ -56,6 +56,7 @@ Ads_Blocker/
 ---
 
 ## 🛠 What the Project Does
+Boost productivity by restricting access to time-wasting sites—runs entirely within GitHub.
 
 1. Downloads a **public ad‑block hosts list**
 2. Extracts domain names mapped to `0.0.0.0`
