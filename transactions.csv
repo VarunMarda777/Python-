@@ -1,0 +1,6 @@
+transaction_id,status,error_code,message
+TXN001,SUCCESS,,
+TXN002,FAILED,E_TIMEOUT,Payment timed out
+TXN003,PENDING,,Awaiting confirmation
+TXN004,SUCCESS,,
+TXN005,FAILED,E_DECLINE,Insufficient balance
